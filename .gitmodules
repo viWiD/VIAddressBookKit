@@ -1,0 +1,3 @@
+[submodule "VILogKit"]
+	path = VILogKit
+	url = git@github.com:viWiD/VILogKit

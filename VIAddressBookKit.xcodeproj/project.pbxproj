@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8737A72419E26F0300EEC091 /* VIAddressBookKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8737A72319E26F0300EEC091 /* VIAddressBookKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8737A72E19E26F0300EEC091 /* VIAddressBookKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8737A72D19E26F0300EEC091 /* VIAddressBookKitTests.swift */; };
+		8737A73919E26F4D00EEC091 /* VIAddressBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8737A73719E26F4D00EEC091 /* VIAddressBookTests.swift */; };
+		8737A73A19E26F4D00EEC091 /* VIPersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8737A73819E26F4D00EEC091 /* VIPersonTests.swift */; };
+		8737A73C19E26F6100EEC091 /* VIAddressBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8737A73B19E26F6100EEC091 /* VIAddressBook.swift */; };
+		8737A73E19E26FAE00EEC091 /* VILogKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8737A73D19E26FAE00EEC091 /* VILogKit.framework */; };
+		8737A74119E26FE200EEC091 /* VIPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8737A74019E26FE200EEC091 /* VIPerson.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,7 +21,11 @@
 		8737A72319E26F0300EEC091 /* VIAddressBookKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VIAddressBookKit.h; sourceTree = "<group>"; };
 		8737A72919E26F0300EEC091 /* VIAddressBookKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIAddressBookKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8737A72C19E26F0300EEC091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8737A72D19E26F0300EEC091 /* VIAddressBookKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIAddressBookKitTests.swift; sourceTree = "<group>"; };
+		8737A73719E26F4D00EEC091 /* VIAddressBookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIAddressBookTests.swift; sourceTree = "<group>"; };
+		8737A73819E26F4D00EEC091 /* VIPersonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIPersonTests.swift; sourceTree = "<group>"; };
+		8737A73B19E26F6100EEC091 /* VIAddressBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIAddressBook.swift; sourceTree = "<group>"; };
+		8737A73D19E26FAE00EEC091 /* VILogKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VILogKit.framework; path = "VILogKit/build/Debug-iphoneos/VILogKit.framework"; sourceTree = "<group>"; };
+		8737A74019E26FE200EEC091 /* VIPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIPerson.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8737A73E19E26FAE00EEC091 /* VILogKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +52,7 @@
 			children = (
 				8737A72019E26F0300EEC091 /* VIAddressBookKit */,
 				8737A72A19E26F0300EEC091 /* VIAddressBookKitTests */,
+				8737A73F19E26FB300EEC091 /* Frameworks */,
 				8737A71F19E26F0300EEC091 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,6 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				8737A72319E26F0300EEC091 /* VIAddressBookKit.h */,
+				8737A74019E26FE200EEC091 /* VIPerson.swift */,
+				8737A73B19E26F6100EEC091 /* VIAddressBook.swift */,
 				8737A72119E26F0300EEC091 /* Supporting Files */,
 			);
 			path = VIAddressBookKit;
@@ -76,7 +88,8 @@
 		8737A72A19E26F0300EEC091 /* VIAddressBookKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				8737A72D19E26F0300EEC091 /* VIAddressBookKitTests.swift */,
+				8737A73719E26F4D00EEC091 /* VIAddressBookTests.swift */,
+				8737A73819E26F4D00EEC091 /* VIPersonTests.swift */,
 				8737A72B19E26F0300EEC091 /* Supporting Files */,
 			);
 			path = VIAddressBookKitTests;
@@ -88,6 +101,14 @@
 				8737A72C19E26F0300EEC091 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8737A73F19E26FB300EEC091 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8737A73D19E26FAE00EEC091 /* VILogKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +217,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8737A73C19E26F6100EEC091 /* VIAddressBook.swift in Sources */,
+				8737A74119E26FE200EEC091 /* VIPerson.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +226,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8737A72E19E26F0300EEC091 /* VIAddressBookKitTests.swift in Sources */,
+				8737A73919E26F4D00EEC091 /* VIAddressBookTests.swift in Sources */,
+				8737A73A19E26F4D00EEC091 /* VIPersonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,25 +322,36 @@
 		8737A73219E26F0300EEC091 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VILogKit/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = VIAddressBookKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		8737A73319E26F0300EEC091 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VILogKit/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = VIAddressBookKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
