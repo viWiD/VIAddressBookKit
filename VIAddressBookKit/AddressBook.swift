@@ -267,6 +267,10 @@ extension AddressBook {
 
 // MARK: - Logging
 
+public var logger: Logger {
+    return Logger.loggerForKeyPath("VIAddressBookKit")
+}
+
 extension AddressBook {
 
     public var logger: Logger {
