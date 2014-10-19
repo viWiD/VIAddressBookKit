@@ -1,5 +1,5 @@
 //
-//  VIAddressBookTests.swift
+//  AddressBookTests.swift
 //  VIOSFramework
 //
 //  Created by Nils Fischer on 17.08.14.
@@ -9,33 +9,33 @@
 import XCTest
 import VIAddressBookKit
 
-class VIAddressBookTests: XCTestCase {
+class AddressBookTests: XCTestCase {
     
     
     // MARK: Authorization
     
     // TODO: some weird error..
     /* func testAuthorization() {
-        XCTAssert(VIAddressBook.authorizationStatus() == .Authorized, "Address Book access is not authorized.")
+        XCTAssert(AddressBook.authorizationStatus() == .Authorized, "Address Book access is not authorized.")
     } */
     
     
     // MARK: Loading Contacts
     
-    class CustomAddressBookContact: VIAddressBookContact {
+    class CustomAddressBookContact: AddressBookContact {
         var customFullName: String? {
             return fullName?.uppercaseString
         }
     }
 
     func testLoadingContacts() {
-        let addressBook = VIAddressBook<VIAddressBookContact>()
+        let addressBook = AddressBook<AddressBookContact>()
         let contacts = addressBook.contacts
         XCTAssert(contacts != nil, "Unable to access contacts.")
     }
     
     func testLoadingCustomContacts() {
-        let addressBook = VIAddressBook<CustomAddressBookContact>()
+        let addressBook = AddressBook<CustomAddressBookContact>()
         let contacts = addressBook.contacts
         XCTAssert(contacts != nil, "Unable to access contacts with custom contact type.")
     }

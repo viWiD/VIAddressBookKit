@@ -9,11 +9,71 @@
 /* Begin PBXBuildFile section */
 		8737A72419E26F0300EEC091 /* VIAddressBookKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8737A72319E26F0300EEC091 /* VIAddressBookKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8737A73919E26F4D00EEC091 /* VIAddressBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8737A73719E26F4D00EEC091 /* VIAddressBookTests.swift */; };
-		8737A73A19E26F4D00EEC091 /* VIPersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8737A73819E26F4D00EEC091 /* VIPersonTests.swift */; };
-		8737A73C19E26F6100EEC091 /* VIAddressBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8737A73B19E26F6100EEC091 /* VIAddressBook.swift */; };
-		8737A73E19E26FAE00EEC091 /* VILogKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8737A73D19E26FAE00EEC091 /* VILogKit.framework */; };
-		8737A74119E26FE200EEC091 /* VIPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8737A74019E26FE200EEC091 /* VIPerson.swift */; };
+		8737A73A19E26F4D00EEC091 /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8737A73819E26F4D00EEC091 /* PersonTests.swift */; };
+		8737A73C19E26F6100EEC091 /* AddressBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8737A73B19E26F6100EEC091 /* AddressBook.swift */; };
+		8737A74119E26FE200EEC091 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8737A74019E26FE200EEC091 /* Person.swift */; };
+		8751089119F343C800D6FCB1 /* VILogKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8751088E19F343BB00D6FCB1 /* VILogKit.framework */; };
+		8751089519F345A700D6FCB1 /* VILogKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 8751088E19F343BB00D6FCB1 /* VILogKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8751089919F3462300D6FCB1 /* VIAddressBookKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 8737A71E19E26F0300EEC091 /* VIAddressBookKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8795661319E75E8900C8763F /* AlphabeticOrdering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8795661219E75E8900C8763F /* AlphabeticOrdering.swift */; };
+		8795661519E7604000C8763F /* AlphabeticOrderingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8795661419E7604000C8763F /* AlphabeticOrderingTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8751088D19F343BB00D6FCB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8751088819F343BB00D6FCB1 /* VILogKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 87539B1F19DB23F00084658D;
+			remoteInfo = VILogKit;
+		};
+		8751088F19F343BB00D6FCB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8751088819F343BB00D6FCB1 /* VILogKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 87539B2A19DB23F00084658D;
+			remoteInfo = VILogKitTests;
+		};
+		8751089219F3456F00D6FCB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8751088819F343BB00D6FCB1 /* VILogKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 87539B1E19DB23F00084658D;
+			remoteInfo = VILogKit;
+		};
+		8751089619F345FC00D6FCB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8737A71519E26F0300EEC091 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8737A71D19E26F0300EEC091;
+			remoteInfo = VIAddressBookKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8751089419F3458600D6FCB1 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8751089519F345A700D6FCB1 /* VILogKit.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8751089819F3461500D6FCB1 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8751089919F3462300D6FCB1 /* VIAddressBookKit.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8737A71E19E26F0300EEC091 /* VIAddressBookKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VIAddressBookKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +82,12 @@
 		8737A72919E26F0300EEC091 /* VIAddressBookKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIAddressBookKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8737A72C19E26F0300EEC091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8737A73719E26F4D00EEC091 /* VIAddressBookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIAddressBookTests.swift; sourceTree = "<group>"; };
-		8737A73819E26F4D00EEC091 /* VIPersonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIPersonTests.swift; sourceTree = "<group>"; };
-		8737A73B19E26F6100EEC091 /* VIAddressBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIAddressBook.swift; sourceTree = "<group>"; };
-		8737A73D19E26FAE00EEC091 /* VILogKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VILogKit.framework; path = "VILogKit/build/Debug-iphoneos/VILogKit.framework"; sourceTree = "<group>"; };
-		8737A74019E26FE200EEC091 /* VIPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIPerson.swift; sourceTree = "<group>"; };
+		8737A73819E26F4D00EEC091 /* PersonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
+		8737A73B19E26F6100EEC091 /* AddressBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBook.swift; sourceTree = "<group>"; };
+		8737A74019E26FE200EEC091 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		8751088819F343BB00D6FCB1 /* VILogKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VILogKit.xcodeproj; path = VILogKit/VILogKit.xcodeproj; sourceTree = "<group>"; };
+		8795661219E75E8900C8763F /* AlphabeticOrdering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphabeticOrdering.swift; sourceTree = "<group>"; };
+		8795661419E7604000C8763F /* AlphabeticOrderingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphabeticOrderingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8737A73E19E26FAE00EEC091 /* VILogKit.framework in Frameworks */,
+				8751089119F343C800D6FCB1 /* VILogKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,8 +132,9 @@
 			isa = PBXGroup;
 			children = (
 				8737A72319E26F0300EEC091 /* VIAddressBookKit.h */,
-				8737A74019E26FE200EEC091 /* VIPerson.swift */,
-				8737A73B19E26F6100EEC091 /* VIAddressBook.swift */,
+				8737A74019E26FE200EEC091 /* Person.swift */,
+				8795661219E75E8900C8763F /* AlphabeticOrdering.swift */,
+				8737A73B19E26F6100EEC091 /* AddressBook.swift */,
 				8737A72119E26F0300EEC091 /* Supporting Files */,
 			);
 			path = VIAddressBookKit;
@@ -89,7 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				8737A73719E26F4D00EEC091 /* VIAddressBookTests.swift */,
-				8737A73819E26F4D00EEC091 /* VIPersonTests.swift */,
+				8737A73819E26F4D00EEC091 /* PersonTests.swift */,
+				8795661419E7604000C8763F /* AlphabeticOrderingTests.swift */,
 				8737A72B19E26F0300EEC091 /* Supporting Files */,
 			);
 			path = VIAddressBookKitTests;
@@ -106,9 +170,18 @@
 		8737A73F19E26FB300EEC091 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8737A73D19E26FAE00EEC091 /* VILogKit.framework */,
+				8751088819F343BB00D6FCB1 /* VILogKit.xcodeproj */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8751088919F343BB00D6FCB1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8751088E19F343BB00D6FCB1 /* VILogKit.framework */,
+				8751089019F343BB00D6FCB1 /* VILogKitTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,10 +206,12 @@
 				8737A71A19E26F0300EEC091 /* Frameworks */,
 				8737A71B19E26F0300EEC091 /* Headers */,
 				8737A71C19E26F0300EEC091 /* Resources */,
+				8751089419F3458600D6FCB1 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8751089319F3456F00D6FCB1 /* PBXTargetDependency */,
 			);
 			name = VIAddressBookKit;
 			productName = VIAddressBookKit;
@@ -150,10 +225,12 @@
 				8737A72519E26F0300EEC091 /* Sources */,
 				8737A72619E26F0300EEC091 /* Frameworks */,
 				8737A72719E26F0300EEC091 /* Resources */,
+				8751089819F3461500D6FCB1 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8751089719F345FC00D6FCB1 /* PBXTargetDependency */,
 			);
 			name = VIAddressBookKitTests;
 			productName = VIAddressBookKitTests;
@@ -187,6 +264,12 @@
 			mainGroup = 8737A71419E26F0300EEC091;
 			productRefGroup = 8737A71F19E26F0300EEC091 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8751088919F343BB00D6FCB1 /* Products */;
+					ProjectRef = 8751088819F343BB00D6FCB1 /* VILogKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8737A71D19E26F0300EEC091 /* VIAddressBookKit */,
@@ -194,6 +277,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8751088E19F343BB00D6FCB1 /* VILogKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = VILogKit.framework;
+			remoteRef = 8751088D19F343BB00D6FCB1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8751089019F343BB00D6FCB1 /* VILogKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = VILogKitTests.xctest;
+			remoteRef = 8751088F19F343BB00D6FCB1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8737A71C19E26F0300EEC091 /* Resources */ = {
@@ -217,8 +317,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8737A73C19E26F6100EEC091 /* VIAddressBook.swift in Sources */,
-				8737A74119E26FE200EEC091 /* VIPerson.swift in Sources */,
+				8795661319E75E8900C8763F /* AlphabeticOrdering.swift in Sources */,
+				8737A73C19E26F6100EEC091 /* AddressBook.swift in Sources */,
+				8737A74119E26FE200EEC091 /* Person.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,11 +328,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				8737A73919E26F4D00EEC091 /* VIAddressBookTests.swift in Sources */,
-				8737A73A19E26F4D00EEC091 /* VIPersonTests.swift in Sources */,
+				8737A73A19E26F4D00EEC091 /* PersonTests.swift in Sources */,
+				8795661519E7604000C8763F /* AlphabeticOrderingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8751089319F3456F00D6FCB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = VILogKit;
+			targetProxy = 8751089219F3456F00D6FCB1 /* PBXContainerItemProxy */;
+		};
+		8751089719F345FC00D6FCB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8737A71D19E26F0300EEC091 /* VIAddressBookKit */;
+			targetProxy = 8751089619F345FC00D6FCB1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8737A72F19E26F0300EEC091 /* Debug */ = {
@@ -322,15 +437,13 @@
 		8737A73219E26F0300EEC091 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/VILogKit/build/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = VIAddressBookKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -343,15 +456,13 @@
 		8737A73319E26F0300EEC091 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/VILogKit/build/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = VIAddressBookKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -409,6 +520,7 @@
 				8737A73319E26F0300EEC091 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8737A73419E26F0300EEC091 /* Build configuration list for PBXNativeTarget "VIAddressBookKitTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +529,7 @@
 				8737A73619E26F0300EEC091 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

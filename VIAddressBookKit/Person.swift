@@ -1,5 +1,5 @@
 //
-//  VIPerson.swift
+//  Person.swift
 //  VIOSFramework
 //
 //  Created by Nils Fischer on 16.08.14.
@@ -9,13 +9,24 @@
 import Foundation
 import UIKit
 
-public class VIPerson {
+public class Person {
 
 
     // MARK: Public Properties
     
     public var firstName: String?
     public var lastName: String?
+    
+    
+    // MARK: Initializers
+    
+    public init() {}
+    
+    public convenience init(firstName: String?, lastName: String?) {
+        self.init()
+        self.firstName = firstName
+        self.lastName = lastName
+    }
     
     
     // MARK: Computed Properties
@@ -40,24 +51,11 @@ public class VIPerson {
             }
             return nil
     }
-    public class func leadingLastNameInitial(person: VIPerson) -> String? {
+    public class func leadingLastNameInitial(person: Person) -> String? {
         return person.leadingLastNameInitial
     }
     
-    // MARK: Initializers
     
-    // TODO: required only to make address book work..
-    public required init() {
-        
-    }
-    
-    public convenience init(firstName: String?, lastName: String?) {
-        self.init()
-        self.firstName = firstName
-        self.lastName = lastName
-    }
-    
-
     // MARK: Interface Output
     // TODO: move somewhere else?
     
@@ -85,33 +83,23 @@ public class VIPerson {
 }
 
 
+// MARK: - Comparison
+
+extension Person: AlphabeticOrdering {
+    
+    public var alphabeticOrderingString: String? {
+        return self.lastName ?? self.firstName ?? nil
+    }
+
+}
+
+
 // MARK: - Printable
 
-extension VIPerson: Printable {
+extension Person: Printable {
     
     public var description: String {
         let unnamedString = "Unnamed Person"
         return "\(fullName ?? unnamedString)"
     }
-}
-
-
-// MARK: - Comparison
-
-extension VIPerson {
-    
-    public class func leadingLastNameIsOrderedBefore(obj1: VIPerson, _ obj2: VIPerson) -> Bool
-    {
-        if obj1.fullName == nil && obj2.fullName != nil {
-            return false
-        } else if obj1.fullName != nil && obj2.fullName == nil {
-            return true
-        } else if obj1.fullName == nil && obj2.fullName == nil {
-            return true
-        }
-        let str1 = obj1.lastName ?? obj1.firstName!
-        let str2 = obj2.lastName ?? obj2.firstName!
-        return str1 < str2
-    }
-
 }
