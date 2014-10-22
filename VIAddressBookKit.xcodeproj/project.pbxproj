@@ -13,6 +13,9 @@
 		8737A73C19E26F6100EEC091 /* AddressBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8737A73B19E26F6100EEC091 /* AddressBook.swift */; };
 		8737A74119E26FE200EEC091 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8737A74019E26FE200EEC091 /* Person.swift */; };
 		8751089919F3462300D6FCB1 /* VIAddressBookKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 8737A71E19E26F0300EEC091 /* VIAddressBookKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		87579D2119F83C71005C4663 /* AddressBookExternalChangeCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = 87579CE719F83758005C4663 /* AddressBookExternalChangeCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		87579D2319F83D8B005C4663 /* AddressBookExternalChangeCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 87579D2219F83D8B005C4663 /* AddressBookExternalChangeCallback.m */; };
+		87579D2519F841AC005C4663 /* AddressBookContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87579D2419F841AC005C4663 /* AddressBookContact.swift */; };
 		8795661319E75E8900C8763F /* AlphabeticOrdering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8795661219E75E8900C8763F /* AlphabeticOrdering.swift */; };
 		8795661519E7604000C8763F /* AlphabeticOrderingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8795661419E7604000C8763F /* AlphabeticOrderingTests.swift */; };
 		87BD8CED19F44B1400DE00A6 /* VILogKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BD8CEC19F44B1400DE00A6 /* VILogKit.framework */; };
@@ -52,6 +55,9 @@
 		8737A73819E26F4D00EEC091 /* PersonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
 		8737A73B19E26F6100EEC091 /* AddressBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBook.swift; sourceTree = "<group>"; };
 		8737A74019E26FE200EEC091 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		87579CE719F83758005C4663 /* AddressBookExternalChangeCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookExternalChangeCallback.h; sourceTree = "<group>"; };
+		87579D2219F83D8B005C4663 /* AddressBookExternalChangeCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookExternalChangeCallback.m; sourceTree = "<group>"; };
+		87579D2419F841AC005C4663 /* AddressBookContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookContact.swift; sourceTree = "<group>"; };
 		8795661219E75E8900C8763F /* AlphabeticOrdering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphabeticOrdering.swift; sourceTree = "<group>"; };
 		8795661419E7604000C8763F /* AlphabeticOrderingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphabeticOrderingTests.swift; sourceTree = "<group>"; };
 		87BD8CEC19F44B1400DE00A6 /* VILogKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VILogKit.framework; path = "../VILogKit/build/Debug-iphoneos/VILogKit.framework"; sourceTree = "<group>"; };
@@ -99,9 +105,12 @@
 			isa = PBXGroup;
 			children = (
 				8737A72319E26F0300EEC091 /* VIAddressBookKit.h */,
-				8737A74019E26FE200EEC091 /* Person.swift */,
-				8795661219E75E8900C8763F /* AlphabeticOrdering.swift */,
 				8737A73B19E26F6100EEC091 /* AddressBook.swift */,
+				8737A74019E26FE200EEC091 /* Person.swift */,
+				87579D2419F841AC005C4663 /* AddressBookContact.swift */,
+				8795661219E75E8900C8763F /* AlphabeticOrdering.swift */,
+				87579CE719F83758005C4663 /* AddressBookExternalChangeCallback.h */,
+				87579D2219F83D8B005C4663 /* AddressBookExternalChangeCallback.m */,
 				8737A72119E26F0300EEC091 /* Supporting Files */,
 			);
 			path = VIAddressBookKit;
@@ -149,6 +158,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87579D2119F83C71005C4663 /* AddressBookExternalChangeCallback.h in Headers */,
 				8737A72419E26F0300EEC091 /* VIAddressBookKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,8 +261,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8795661319E75E8900C8763F /* AlphabeticOrdering.swift in Sources */,
+				87579D2319F83D8B005C4663 /* AddressBookExternalChangeCallback.m in Sources */,
 				8737A73C19E26F6100EEC091 /* AddressBook.swift in Sources */,
 				8737A74119E26FE200EEC091 /* Person.swift in Sources */,
+				87579D2519F841AC005C4663 /* AddressBookContact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +389,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -396,6 +409,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

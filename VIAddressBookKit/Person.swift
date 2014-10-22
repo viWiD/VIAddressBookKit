@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class Person {
+@objc public class Person: AlphabeticOrdering {
 
 
     // MARK: Public Properties
@@ -55,43 +55,21 @@ public class Person {
         return person.leadingLastNameInitial
     }
     
+
+    // MARK: - Comparison
     
-    // MARK: Interface Output
-    // TODO: move somewhere else?
-    
-    public func attributedFullNameOfSize(fontSize: CGFloat) -> NSAttributedString?
-    {
-        if let fullName = self.fullName {
-            var attributedName = NSMutableAttributedString(string: fullName)
-            attributedName.beginEditing()
-            if lastName != nil {
-                var beginBoldFont = firstName != nil ? countElements(firstName!) : 0
-                if beginBoldFont > 0 {
-                    beginBoldFont++
-                }
-                attributedName.addAttribute(NSFontAttributeName, value:UIFont.boldSystemFontOfSize(fontSize), range:NSMakeRange(beginBoldFont, countElements(lastName!)))
-            } else {
-                attributedName.addAttribute(NSFontAttributeName, value:UIFont.boldSystemFontOfSize(fontSize), range:NSMakeRange(0, countElements(firstName!)))
-            }
-            attributedName.endEditing()
-            return attributedName
+    public var alphabeticOrderingString: String? {
+        if let alphabeticOrderingString = self.lastName ?? self.firstName ?? nil {
+            // Remove diacritics
+            return "".join(alphabeticOrderingString.decomposedStringWithCanonicalMapping.componentsSeparatedByCharactersInSet(NSCharacterSet.letterCharacterSet().invertedSet))
         } else {
             return nil
         }
+
     }
     
 }
 
-
-// MARK: - Comparison
-
-extension Person: AlphabeticOrdering {
-    
-    public var alphabeticOrderingString: String? {
-        return self.lastName ?? self.firstName ?? nil
-    }
-
-}
 
 
 // MARK: - Printable

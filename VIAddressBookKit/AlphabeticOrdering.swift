@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import VILogKit
 
 /* TODO: remove @objc flag when this works without runtime exception:
 protocol P {}
@@ -42,4 +43,14 @@ public func alphabeticSectioningLetter(element: AlphabeticOrdering) -> String?
     } else {
         return nil
     }
+}
+
+public func attributedStringWithBoldAlphabeticOrderingString(element: AlphabeticOrdering, string: String, ofSize fontSize: CGFloat) -> NSAttributedString
+{
+    var mutableAttributedString = NSMutableAttributedString(string: string, attributes: [ NSFontAttributeName : UIFont.systemFontOfSize(fontSize) ])
+    if let orderingString = element.alphabeticOrderingString {
+        let range = (string as NSString).rangeOfString(orderingString)
+        mutableAttributedString.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFontOfSize(fontSize), range: range)
+    }
+    return mutableAttributedString
 }
