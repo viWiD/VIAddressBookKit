@@ -13,6 +13,10 @@ import VILogKit
 import CoreData
 
 
+// MARK: Global Interface
+
+let logger = Logger.loggerForKeyPath("VIAddressBookKit")
+
 public let AddressBookAuthorizationStatusDidChangeNotification = "VIAddressBookKit.AddressBookAuthorizationStatusDidChangeNotification"
 public let AddressBookStatusDidChangeNotification = "VIAddressBookKit.AddressBookStatusDidChangeNotification"
 /// Forward this notification to addressBookDidChangeExternally: to trigger a contact reload (can't listen to notifications in generic non-@objc class, so has to be triggered externally for now).
@@ -39,7 +43,7 @@ public enum AddressBookStatus<C>: Printable {
 }
 
 public class AddressBook<C: AddressBookContact> {
-    
+
     public let addressBookRef: ABAddressBookRef
     
     public var status: AddressBookStatus<C> = .NotLoaded {
@@ -332,14 +336,10 @@ extension AddressBook {
 
 // MARK: - Logging
 
-public var logger: Logger {
-    return Logger.loggerForKeyPath("VIAddressBookKit")
-}
-
 extension AddressBook {
 
     public var logger: Logger {
-        return Logger.loggerForKeyPath("VIAddressBookKit.AddressBook")
+        return VIAddressBookKit.logger.childForKeyPath("AddressBook")
     }
 
 }

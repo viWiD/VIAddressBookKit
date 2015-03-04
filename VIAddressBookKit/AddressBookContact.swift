@@ -166,7 +166,7 @@ public func ==(lhs: AddressBookContact, rhs: AddressBookContact) -> Bool {
 extension AddressBookContact {
     
     public var logger: Logger {
-        return Logger.loggerForKeyPath("VIAddressBookKit.AddressBook.AddressBookContact")
+        return VIAddressBookKit.logger.childForKeyPath("AddressBook.AddressBookContact")
     }
     
 }
