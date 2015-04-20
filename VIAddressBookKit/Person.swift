@@ -43,10 +43,10 @@ import UIKit
     
     // TODO: char instead of string?
     public var leadingLastNameInitial: String? {
-        if lastName != nil && countElements(lastName!) > 0 {
+        if lastName != nil && count(lastName!) > 0 {
             // TODO: use String instead of NSString
             return (lastName! as NSString).substringToIndex(1).capitalizedString
-        } else if firstName != nil && countElements(firstName!) > 0 {
+        } else if firstName != nil && count(firstName!) > 0 {
             return (firstName! as NSString).substringToIndex(1).capitalizedString
             }
             return nil

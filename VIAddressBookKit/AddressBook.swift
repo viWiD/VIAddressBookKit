@@ -15,7 +15,7 @@ import CoreData
 
 // MARK: Global Interface
 
-let logger = Logger.loggerForKeyPath("VIAddressBookKit")
+public let logger = Logger.loggerForKeyPath("VIAddressBookKit")
 
 public let AddressBookAuthorizationStatusDidChangeNotification = "VIAddressBookKit.AddressBookAuthorizationStatusDidChangeNotification"
 public let AddressBookStatusDidChangeNotification = "VIAddressBookKit.AddressBookStatusDidChangeNotification"
@@ -243,8 +243,8 @@ private enum ChangeType {
 
 @objc public protocol AddressBookContactMergable {
     
-    class var entityName: String { get }
-    class var recordIdKeyPath: String { get }
+    static var entityName: String { get }
+    static var recordIdKeyPath: String { get }
     
     func mergeAddressBookContact(addressBookContact: AddressBookContact)
     
@@ -281,11 +281,11 @@ extension AddressBook {
                         changeType = .Delete
                     case (_, let managedContactsIndex) where managedContactsIndex > managedContacts.count - 1:
                         changeType = .Insert
-                    case (let contactsIndex, let managedContactsIndex) where contactsRecordIds[contactsIndex] == (managedContacts[managedContactsIndex].valueForKey(M.recordIdKeyPath)! as NSNumber).intValue:
+                    case (let contactsIndex, let managedContactsIndex) where contactsRecordIds[contactsIndex] == (managedContacts[managedContactsIndex].valueForKey(M.recordIdKeyPath)! as! NSNumber).intValue:
                         changeType = .Update
-                    case (let contactsIndex, let managedContactsIndex) where contactsRecordIds[contactsIndex] < (managedContacts[managedContactsIndex].valueForKey(M.recordIdKeyPath)! as NSNumber).intValue:
+                    case (let contactsIndex, let managedContactsIndex) where contactsRecordIds[contactsIndex] < (managedContacts[managedContactsIndex].valueForKey(M.recordIdKeyPath)! as! NSNumber).intValue:
                         changeType = .Insert
-                    case (let contactsIndex, let managedContactsIndex) where contactsRecordIds[contactsIndex] > (managedContacts[managedContactsIndex].valueForKey(M.recordIdKeyPath)! as NSNumber).intValue:
+                    case (let contactsIndex, let managedContactsIndex) where contactsRecordIds[contactsIndex] > (managedContacts[managedContactsIndex].valueForKey(M.recordIdKeyPath)! as! NSNumber).intValue:
                         changeType = .Delete
                     default:
                         self.logger.log("Index \(i) not handled correctly.", forLevel: .Warning)
@@ -296,13 +296,13 @@ extension AddressBook {
                     switch changeType {
                     case .Insert:
                         let contact = contacts[contactsRecordIds[i.contactsIndex]]!
-                        let insertedContact = NSEntityDescription.insertNewObjectForEntityForName(M.entityName, inManagedObjectContext: managedObjectContext) as AddressBookContactMergable
+                        let insertedContact = NSEntityDescription.insertNewObjectForEntityForName(M.entityName, inManagedObjectContext: managedObjectContext) as! AddressBookContactMergable
                         insertedContact.mergeAddressBookContact(contact)
                         self.logger.log("Inserted contact \(contact).", forLevel: .Verbose)
                         i.contactsIndex += 1
                     case .Update:
                         let contact = contacts[contactsRecordIds[i.contactsIndex]]!
-                        let managedContact = managedContacts[i.managedContactsIndex] as AddressBookContactMergable
+                        let managedContact = managedContacts[i.managedContactsIndex] as! AddressBookContactMergable
                         managedContact.mergeAddressBookContact(contact)
                         self.logger.log("Updated contact \(contact).", forLevel: .Verbose)
                         i.contactsIndex += 1

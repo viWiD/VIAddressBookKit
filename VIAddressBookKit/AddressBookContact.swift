@@ -71,7 +71,7 @@ public class AddressBookContact: Person {
     }
     private lazy var _fullName: String? = {
         return ABRecordCopyCompositeName(self.record).takeRetainedValue()
-        }()
+        }() as String
     
     override public var alphabeticOrderingString: String? {
         var alphabeticOrderingString: String?
@@ -119,7 +119,7 @@ public class AddressBookContact: Person {
     // TODO: remove required and make internal (crash when using a subclass and then doing type casting later)
     required public init(record: ABRecordRef) {
         let linkedRecords: NSArray = ABPersonCopyArrayOfAllLinkedPeople(record).takeRetainedValue()
-        self.linkedRecords = linkedRecords
+        self.linkedRecords = linkedRecords as [ABRecordRef]
         super.init()
     }
     
