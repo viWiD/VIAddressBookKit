@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import AddressBook
-import VILogKit
+import Evergreen
 import CoreData
 
 
@@ -44,7 +44,7 @@ public enum AddressBookStatus<C>: Printable {
 
 public class AddressBook<C: AddressBookContact> {
 
-    public let addressBookRef: ABAddressBookRef
+    public var addressBookRef: ABAddressBookRef!
     
     public var status: AddressBookStatus<C> = .NotLoaded {
         didSet {
@@ -64,18 +64,27 @@ public class AddressBook<C: AddressBookContact> {
     
     // MARK: Initializers
 
-    public init() {
+    public init?() {
         // Create Address Book
-        var addressBookRef: ABAddressBookRef?
-        dispatch_sync(addressBookQueue) {
-            addressBookRef = ABAddressBookCreateWithOptions(nil, nil).takeRetainedValue()
-            // Register external change callback
-            registerExternalChangeCallbackForAddressBook(addressBookRef)
+        var error: Unmanaged<CFError>? = nil
+        let unmanagedAddressBookRef = ABAddressBookCreateWithOptions(nil, &error)
+        if error == nil {
+            var addressBookRef: ABAddressBookRef?
+            dispatch_sync(addressBookQueue) {
+                addressBookRef = unmanagedAddressBookRef.takeRetainedValue()
+                // Register external change callback
+                if let addressBookRef: ABAddressBookRef = addressBookRef {
+                    registerExternalChangeCallbackForAddressBook(addressBookRef)
+                }
+            }
+            if addressBookRef == nil {
+                log("No error, but could not take ABAddressBookRef retained value.", forLevel: .Critical)
+            }
+            self.addressBookRef = addressBookRef!
+        } else {
+            log("Could not create ABAddressBookRef.", forLevel: .Critical)
+            return nil
         }
-        if addressBookRef == nil {
-            log("Could not create ABAddressBookRef.", forLevel: .Critical) // TODO: can't access self here, but should never happen anyway
-        }
-        self.addressBookRef = addressBookRef!
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "addressBookDidChangeExternally:", name: AddressBookDidChangeExternallyNotification, object: nil)
     }
     
@@ -83,7 +92,7 @@ public class AddressBook<C: AddressBookContact> {
     // MARK: Singleton
     // TODO: reconsider this..
     
-    public class func sharedAddressBook() -> AddressBook<AddressBookContact> {
+    public class func sharedAddressBook() -> AddressBook<AddressBookContact>? {
         return _sharedAddressBook
     }
     

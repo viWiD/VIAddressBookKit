@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import VILogKit
+import Evergreen
 
 /* TODO: remove @objc flag when this works without runtime exception:
 protocol P {}

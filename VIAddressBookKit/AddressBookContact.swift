@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import VILogKit
+import Evergreen
 
 
 public class AddressBookContact: Person {
